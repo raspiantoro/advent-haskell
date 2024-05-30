@@ -25,16 +25,23 @@ source-repository head
 
 library
   exposed-modules:
+      Check
       Lib
+      Sample
   other-modules:
       Paths_day2
   autogen-modules:
       Paths_day2
   hs-source-dirs:
       src
+  default-extensions:
+      OverloadedStrings
+      OverloadedRecordDot
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , split
+    , text
   default-language: Haskell2010
 
 executable day2-exe
@@ -45,10 +52,15 @@ executable day2-exe
       Paths_day2
   hs-source-dirs:
       app
+  default-extensions:
+      OverloadedStrings
+      OverloadedRecordDot
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , day2
+    , split
+    , text
   default-language: Haskell2010
 
 test-suite day2-test
@@ -60,8 +72,13 @@ test-suite day2-test
       Paths_day2
   hs-source-dirs:
       test
+  default-extensions:
+      OverloadedStrings
+      OverloadedRecordDot
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , day2
+    , split
+    , text
   default-language: Haskell2010

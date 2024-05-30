@@ -1,6 +1,14 @@
 module Main (main) where
 
-import Lib
+import System.Environment (getArgs)
+import Lib (getLines, sumEligibleID, GameRules(..))
+
+gameRules :: GameRules
+gameRules = GameRules
+            { blue = 14
+            , red = 12
+            , green = 13
+            }
 
 main :: IO ()
-main = someFunc
+main = (getArgs >>= getLines . head) >>= (print . sumEligibleID gameRules)
